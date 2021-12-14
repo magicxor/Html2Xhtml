@@ -1,0 +1,9 @@
+﻿<Window x:Class="WpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="Auto" Width="525">
+    <StackPanel>
+        <Button Name="runButton" Click="runButton_Click">Html2Xhtml</Button>
+        <TextBox Name="textBox" Height="200"></TextBox>
+    </StackPanel>
+</Window>
