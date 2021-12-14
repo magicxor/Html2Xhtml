@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wt="clr-namespace:WpfTest"
+        Title="Html2Xhtml for .NET 4.0 Sample Application" Height="Auto" Width="525"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Row="0">
+            <Button Name="getButton" Click="getButton_Click" DockPanel.Dock="Right">Get HTML</Button>
+            <TextBox Name="uriBox" Text="http://inci.sozlukspot.com/w/bu-ba%C5%9Fl%C4%B1kta-suzan-olay%C4%B1n%C4%B1-anlam%C5%9F-gibi-yapyrz/"></TextBox>            
+        </DockPanel>
+        
+        <DockPanel Grid.Row="1">
+            <Label DockPanel.Dock="Top">HTML:</Label>
+            <TextBox Name="htmlBox" VerticalScrollBarVisibility="Visible"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Row="2">
+            <Label DockPanel.Dock="Top">XHTML:</Label>
+            <TextBox Name="xhtmlBox" VerticalScrollBarVisibility="Visible"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Row="3">
+            <Label DockPanel.Dock="Top">XML:</Label>
+            <TextBox Name="xmlBox" VerticalScrollBarVisibility="Visible"></TextBox>
+        </DockPanel>
+
+        <Button Grid.Column="1" Grid.Row="0" Name="runButton" Click="runButton_Click">Html2Xhtml</Button>
+        <wt:Html2XhtmlControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" x:Name="s"></wt:Html2XhtmlControl>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="WpfTest.Html2XhtmlControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:Corsis.Xhtml;assembly=Html2Xhtml"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="docTypeEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="c:DocType"></x:Type>
+            </ObjectDataProvider.MethodParameters>     
+        </ObjectDataProvider>       
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Column="0" Grid.Row="0">Document Type:</Label>
+        <Label Grid.Column="0" Grid.Row="1">e:</Label>
+        <Label Grid.Column="0" Grid.Row="2">Input Encoding:</Label>
+        <Label Grid.Column="0" Grid.Row="3">Output Encoding:</Label>
+        <Label Grid.Column="0" Grid.Row="4">Line Length:</Label>
+        <Label Grid.Column="0" Grid.Row="5">Tab Length:</Label>
+        <Label Grid.Column="0" Grid.Row="6">Preserve Whitespace in Comments:</Label>
+        <Label Grid.Column="0" Grid.Row="7">Convert CDATA:</Label>
+        <Label Grid.Column="0" Grid.Row="8">Compact Block Elements:</Label>
+        <Label Grid.Column="0" Grid.Row="9">Compact Empty Element Tags:</Label>
+        <Label Grid.Column="0" Grid.Row="10">Always Empty Element Tags:</Label>
+        <Label Grid.Column="0" Grid.Row="11">DOS End of Line:</Label>
+                
+        <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Source={StaticResource docTypeEnum}}" SelectedIndex="0" x:Name="doc" />
+        <CheckBox Grid.Column="1" Grid.Row="1" x:Name="e" IsChecked="False" />
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="inputEncoding" Text="utf-8" />
+        <TextBox Grid.Column="1" Grid.Row="3" x:Name="outputEncoding" Text="utf-8" />
+        <TextBox Grid.Column="1" Grid.Row="4" x:Name="lineLength" />
+        <TextBox Grid.Column="1" Grid.Row="5" x:Name="tabLength" Text="0" />
+        <CheckBox Grid.Column="1" Grid.Row="6" x:Name="spaceComment" IsChecked="True" />
+        <CheckBox Grid.Column="1" Grid.Row="7" x:Name="cdata" IsChecked="False" />
+        <CheckBox Grid.Column="1" Grid.Row="8" x:Name="block" IsChecked="False" />
+        <CheckBox Grid.Column="1" Grid.Row="9" x:Name="empty" IsChecked="False" />
+        <CheckBox Grid.Column="1" Grid.Row="10" x:Name="emptyAlways" IsChecked="False" />
+        <CheckBox Grid.Column="1" Grid.Row="11" x:Name="dos" IsChecked="False" />
+
+    </Grid>
+    
+</UserControl>
